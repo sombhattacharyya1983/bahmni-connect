@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 set -e
 
 yarn
-grunt bundle
+yarn run bundle
 
 mkdir bahmni-connect-apps
 mkdir androidDist
@@ -21,14 +21,14 @@ echo "Starting Xvfb process $XVFB_PID"
 
 rm -rf dist/*
 
-grunt chrome
-npm run sw
+yarn run chrome
+yarn run sw
 cp -r dist/* bahmni-connect-apps
 zip -r bahmni-connect-apps.zip bahmni-connect-apps
 
 rm -rf dist/*
 
-grunt android
+yarn run android
 cp -r dist/* androidDist
 
 echo "Killing Xvfb process $XVFB_PID"

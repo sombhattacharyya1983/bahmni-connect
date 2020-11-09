@@ -5,6 +5,15 @@ before_install:
   - export CHROME_BIN=chromium-browser
 services:
   - xvfb
+
 script:
   - npm install
-  - npm run unit
+  - npm install -g bower
+  - npm install -g grunt-cli
+  - gem install compass
+  - cd ui && npm install
+  - cat npm-debug.log || true
+  - bower install
+
+
+

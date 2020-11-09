@@ -16,5 +16,5 @@ script:
   - bower install
   - grunt compass && grunt chrome && grunt generate-sw
 
-
-
+notifications:
+  email: false
